@@ -38,9 +38,9 @@ function cards(item){
     </div>
     <div class="card__content">
         <h4>${item.title}</h4>
-        <p>${item.message}</p>
+        <p class="message">${item.message}</p>
         <div class="duration">
-            <p>${item.time}</p>
+            <p class="time">${item.time}</p>
         </div>
     </div>
     `
