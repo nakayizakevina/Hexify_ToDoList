@@ -40,7 +40,6 @@ function cards(item){
         <h4>${item.title}</h4>
         <p>${item.message}</p>
         <div class="duration">
-            <div>${item.icon}</div>
             <p>${item.time}</p>
         </div>
     </div>
