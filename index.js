@@ -33,9 +33,9 @@ cardDetails.forEach(content);
 function content(item) {
   const cardContent = document.createElement("div");
   cardContent.classList = "card__container";
-
-  cardContent.innerHTML = `
-      <div class="card">
+  const card = document.createElement("div");
+  card.innerHTML = `
+    <div class="card">
         <div class="icon__container">
      <img src=${item.image} class="icon"/>
     </div>
@@ -47,10 +47,12 @@ function content(item) {
         </div>
     </div>
     </div>
-    <div class="deleteIcon__container">
+`
+const deleteBtn = document.createElement("div");
+deleteBtn.classList = "deleteIcon__container"
+deleteBtn.innerHTML = ` 
     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDI0IiBoZWlnaHQ9IjEwMjQiIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xNjAgMjU2SDk2YTMyIDMyIDAgMCAxIDAtNjRoMjU2Vjk2YTMyIDMyIDAgMCAxIDMyLTMyaDI1NmEzMiAzMiAwIDAgMSAzMiAzMnY5NmgyNTZhMzIgMzIgMCAxIDEgMCA2NGgtNjR2NjcyYTMyIDMyIDAgMCAxLTMyIDMySDE5MmEzMiAzMiAwIDAgMS0zMi0zMnptNDQ4LTY0di02NEg0MTZ2NjR6TTIyNCA4OTZoNTc2VjI1NkgyMjR6bTE5Mi0xMjhhMzIgMzIgMCAwIDEtMzItMzJWNDE2YTMyIDMyIDAgMCAxIDY0IDB2MzIwYTMyIDMyIDAgMCAxLTMyIDMybTE5MiAwYTMyIDMyIDAgMCAxLTMyLTMyVjQxNmEzMiAzMiAwIDAgMSA2NCAwdjMyMGEzMiAzMiAwIDAgMS0zMiAzMiIvPjwvc3ZnPg==" class="delete__icon"/>
-    </div>
-    `;
+`
 
     let isDraggable = false;
     let mouseStartX = 0;
@@ -66,7 +68,7 @@ function content(item) {
         mouseCurrentX = e.clientX;
         let distanceMouseMoved = mouseCurrentX - mouseStartX;
         if(distanceMouseMoved < 0){
-            cardContent.style.transform = `translateX ${distanceMouseMoved}px`;
+            card.style.transform = `translateX ${distanceMouseMoved}px`;
         }
     });
 
@@ -75,18 +77,21 @@ function content(item) {
         
         let distanceMouseMoved = mouseCurrentX - mouseStartX;
         if(distanceMouseMoved < -80 ){
-            cardContent.style.transform = `translateX(-80px)`;
+            card.style.transform = `translateX(-80px)`;
 
         }else{
-            cardContent.style.transform = `translateX(0)`;
+            card.style.transform = `translateX(0)`;
         }
     })
 
-   const deleteButton = cardContent.querySelector(".delete__icon");
+   const deleteButton = deleteBtn.querySelector(".delete__icon");
    deleteButton.addEventListener("click", function(){
     console.log("have been deleted")
-    cardContent.remove();
+    card.remove();
     });
+
+    cardContent.appendChild(card)
+    cardContent.appendChild(deleteBtn)
 
   cardContainer.appendChild(cardContent);
 }
