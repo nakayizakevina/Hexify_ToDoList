@@ -82,14 +82,11 @@ function content(item) {
         }
     })
 
-//    const deleteButton = document.querySelectorAll(".delete__button");
-//    deleteButton.addEventListener("click", function(){
-//     console.log("have been deleted")
-//     cardContent.remove();
-//     });
-
-
- 
+   const deleteButton = cardContent.querySelector(".delete__icon");
+   deleteButton.addEventListener("click", function(){
+    console.log("have been deleted")
+    cardContent.remove();
+    });
 
   cardContainer.appendChild(cardContent);
 }

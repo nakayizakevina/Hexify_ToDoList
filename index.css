@@ -9,8 +9,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
     /* position: relative; 
     overflow: hidden; */
+}
+
+.card__container{
+    position: relative;
+    overflow: hidden;
+    max-width: 400px;
 }
 
 .card{
@@ -18,11 +25,14 @@
     padding:10px;
     display: flex;
     gap: 10px;
-    /* position: absolute;
-    z-index: 2; */
+    position: relative;
+    z-index: 2;
+    transition: transform 0.2s ease;
     border-radius: 10px;
+    /* background-color: green; */
     background-color: white;
-	box-shadow: 0 0.5em 0.5em hsla(0, 0%, 0%, 0.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+	/* box-shadow: 0 0.5em 0.5em hsla(0, 0%, 0%, 0.05); */
 }
 
 .message{
@@ -41,29 +51,21 @@
     background-color: purple;
 }
 
-/* .card__content{
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-} */
-
 .time{
     color: gray;
 }
 
 .deleteIcon__container{
-    width: 300px;
-    height: 90px;
-    padding:10px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10px;
-    border-radius: 9px;
-    box-shadow: 0;
-    border-radius: 1em;
-    /* position: absolute; */
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80px;
+    height: 100%;
     background-color: red;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .delete__icon{
