@@ -2,8 +2,7 @@ const cardContainer = document.getElementById("cards__container");
 
 const cardDetails = [
   {
-    image:
-      "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMjEgMmE4Ljk5OCA4Ljk5OCAwIDAgMC04LjYxMiAxMS42MTJMMiAyNHY2aDZsMTAuMzg4LTEwLjM4OEE5IDkgMCAxIDAgMjEgMm0wIDE2YTcgNyAwIDAgMS0yLjAzMi0uMzAybC0xLjE0Ny0uMzQ4bC0uODQ3Ljg0N2wtMy4xODEgMy4xODFMMTIuNDE0IDIwTDExIDIxLjQxNGwxLjM3OSAxLjM3OWwtMS41ODYgMS41ODZMOS40MTQgMjNMOCAyNC40MTRsMS4zNzkgMS4zNzlMNy4xNzIgMjhINHYtMy4xNzJsOS44MDItOS44MDJsLjg0OC0uODQ3bC0uMzQ4LTEuMTQ3QTcgNyAwIDEgMSAyMSAxOCIvPjxjaXJjbGUgY3g9IjIyIiBjeT0iMTAiIHI9IjIiIGZpbGw9IiNmZmYiLz48L3N2Zz4=",
+    image:"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZyBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMS41Ij48cGF0aCBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNMTUuNjggMTQuNTg3YzMuNDkgMCA2LjMyLTIuODE4IDYuMzItNi4yOTRTMTkuMTcgMiAxNS42OCAyUzkuMzYzIDQuODE4IDkuMzYzIDguMjkzYzAgMS42MS43MzQgMi43ODEuNzM0IDIuNzgxbC03LjY0MiA3LjYxYy0uMzQzLjM0Mi0uODIzIDEuMjMgMCAyLjA1bC44ODIuODc4Yy4zNDMuMjkzIDEuMjA1LjcwMyAxLjkxIDBsMS4wMy0xLjAyNGMxLjAyOCAxLjAyNCAyLjIwNC40MzkgMi42NDUtLjE0N2MuNzM0LTEuMDI0LS4xNDctMi4wNDktLjE0Ny0yLjA0OWwuMjk0LS4yOTNjMS40MSAxLjQwNiAyLjY0NS41ODYgMy4wODYgMGMuNzM1LTEuMDI0IDAtMi4wNDkgMC0yLjA0OWMtLjI5NC0uNTg1LS44ODItLjU4NS0uMTQ3LTEuMzE3bC44ODItLjg3OGMuNzA1LjU4NSAyLjE1NS43MzIgMi43OTIuNzMyWiIvPjxwYXRoIGQ9Ik0xNy44ODUgOC4yOTRhMi4yIDIuMiAwIDAgMS0yLjIwNCAyLjE5NWEyLjIgMi4yIDAgMCAxLTIuMjA0LTIuMTk1YTIuMiAyLjIgMCAwIDEgMi4yMDQtMi4xOTZhMi4yIDIuMiAwIDAgMSAyLjIwNCAyLjE5NloiLz48L2c+PC9zdmc+",
     title: "Passwords",
     message:
       "You can't back up the application without bypassing the aptical gb bus!",
@@ -34,6 +33,7 @@ function content(item) {
   const cardContent = document.createElement("div");
   cardContent.classList = "card__container";
   const card = document.createElement("div");
+  card.classList = "card__details"
   card.innerHTML = `
     <div class="card">
         <div class="icon__container">

@@ -5,6 +5,44 @@
 	padding: 0;
 }
 
+:root {
+	--hue: 223;
+	--white: hsl(var(--hue) 0% 100%);
+	--gray50: hsl(var(--hue) 10% 95%);
+	--gray300: hsl(var(--hue) 10% 70%);
+	--gray400: hsl(var(--hue) 10% 60%);
+	--gray500: hsl(var(--hue) 10% 50%);
+	--gray600: hsl(var(--hue) 10% 40%);
+	--gray800: hsl(var(--hue) 10% 20%);
+	--gray950: hsl(var(--hue) 10% 5%);
+	--danger400: hsl(3 90% 60%);
+	--trans-dur: 0.3s;
+	--trans-timing: cubic-bezier(0.65, 0, 0.35, 1);
+	color-scheme: light dark;
+	font-size: 16px;
+}
+
+body {
+	background-color: light-dark(var(--gray50), var(--gray950));
+	color: light-dark(var(--gray950), var(--gray50));
+	display: grid;
+	overflow-x: hidden;
+	height: 100vh;
+	transition:
+	background-color var(--trans-dur),
+	color var(--trans-dur);
+}
+
+button {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+svg {
+	display: block;
+}
+
 #cards__container{
     display: flex;
     flex-direction: column;
@@ -19,18 +57,27 @@
     max-width: 400px;
 }
 
+.card__details{
+    position: relative;
+    z-index: 10;
+    transition: transform 0.2s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    
+}
+
 .card{
     max-width: 400px;
     padding:10px;
     display: flex;
     gap: 10px;
-    position: relative;
-    z-index: 10;
-    transition: transform 0.2s ease;
     border-radius: 10px;
-    /* background-color: green; */
-    background-color: white;
-	box-shadow: 0 0.5em 0.5em hsla(0, 0%, 0%, 0.05);
+    background-color:white;
+}
+
+.card__content{
+    display: flex;
+    flex-direction: column;
+    gap:6px;
 }
 
 .message{
@@ -54,9 +101,8 @@
 }
 
 .deleteIcon__container{
-    /* max-width: 400px; */
     padding:10px; 
-     width: 80px;
+    width: 100px;
     height: 100%; 
     position: absolute;
     right: 0;
