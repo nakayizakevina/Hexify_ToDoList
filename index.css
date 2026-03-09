@@ -54,13 +54,13 @@ svg {
 .card__container{
     position: relative;
     overflow: hidden;
-    max-width: 400px;
+    width:400px;
+    /* max-width: 400px; */
 }
 
 .card__details{
     position: relative;
     z-index: 10;
-    transition: transform 0.2s ease;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     
 }
@@ -70,6 +70,8 @@ svg {
     padding:10px;
     display: flex;
     gap: 10px;
+    transition: transform 0.0s ease;
+    cursor: pointer;
     border-radius: 10px;
     background-color:white;
 }
@@ -78,21 +80,27 @@ svg {
     display: flex;
     flex-direction: column;
     gap:6px;
+    flex: 1;
 }
 
 .message{
     font-size: 1rem;
 }
 
+.icon{
+    width:25px;
+    height: 25px;
+    
+}
+
 .icon__container{
     width: 50px;
     height: 50px;
     padding: 4px;
-    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 100%;
+    border-radius: 50%;
     background-color: purple;
 }
 
@@ -110,7 +118,7 @@ svg {
     border-radius: 10px;
     display: flex;
     justify-content: flex-end;
-    align-items:flex-end;
+    align-items:center;
     background-color: red;  
 }
 

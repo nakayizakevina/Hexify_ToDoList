@@ -36,7 +36,7 @@ function content(item) {
   card.classList = "card__details"
   card.innerHTML = `
     <div class="card">
-        <div class="icon__container">
+    <div class="icon__container">
      <img src=${item.image} class="icon"/>
     </div>
     <div class="card__content">
@@ -74,7 +74,7 @@ deleteBtn.innerHTML = `
 
     cardContent.addEventListener("mouseup", (e) =>{
         if(isDraggable === false) return;
-        
+        mouseCurrentX = e.clientX;
         let distanceMouseMoved = mouseCurrentX - mouseStartX;
         if(distanceMouseMoved < -80 ){
             card.style.transform = `translateX(-80px)`;
