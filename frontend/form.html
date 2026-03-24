@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link rel="stylesheet" href="./form.css">
+</head>
+<body>
+    <form action="">
+        <input id="title" type="text" placeholder="Enter title" required>
+        <textarea id="description" name="description" id="description" placeholder="Enter description" required></textarea>
+        <input type="date" placeholder="Select date">
+        <div class="buttn_container">
+          <button id="createtask_btn" class="create_btn">Create Task</button>
+          <button class="cancel_btn">Cancel</button>
+          <button class="task_btn">Got to task</button>
+        </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./form.js"></script>
+</body>
+</html>
