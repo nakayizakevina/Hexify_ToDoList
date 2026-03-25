@@ -20,6 +20,7 @@ form {
     border-radius: 10px;
     width: 350px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
 }
 
 
@@ -32,6 +33,27 @@ form textarea {
     border-radius: 5px;
     background-color: white;
     font-size: 14px;
+}
+
+.input_alert{
+    margin:0px;
+    position:relative;
+}
+
+.input_alert p{
+    font-size: 10px;
+    color:#f44336;
+    position: absolute;
+    bottom: 1px;
+    left: 2px;
+}
+
+.title_alert{
+    display: none;
+}
+
+.description_alert{
+    display: none;
 }
 
 .buttn_container{
@@ -56,12 +78,48 @@ form button {
 }
 
 .cancel_btn {
-    background-color: #f44336; 
-    display: none;
+    background-color: #f44336;   
 }
 
 .task_btn {
     background-color: #2196F3; 
+}
+
+.model{
+    background-color: #FFFFFF; 
+    padding: 30px;
+    border-radius: 10px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; 
+    display: none;
+}
+
+.model button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    color: white;
+    cursor: pointer;
+}
+
+.save_task_model{
+    background-color: #FFFFFF; 
+    padding: 30px;
+    border-radius: 10px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; 
     display: none;
 }
 

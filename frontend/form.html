@@ -8,15 +8,31 @@
 </head>
 <body>
     <form action="">
-        <input id="title" type="text" placeholder="Enter title" required>
-        <textarea id="description" name="description" id="description" placeholder="Enter description" required></textarea>
+        <div class="input_alert">
+            <input id="title" type="text" placeholder="Enter title" required>
+            <p id="title_alert" class="title_alert">Title is required</p>
+        </div>
+        <div class="input_alert">
+            <textarea id="description" name="description" id="description" placeholder="Enter description" required></textarea>
+            <p id="description_alert" class="description_alert">Description is required</p>
+        </div>
+
         <input  id="time" type="time" placeholder="Select date">
         <div class="buttn_container">
           <button id="createtask_btn" class="create_btn">Create Task</button>
-          <button class="cancel_btn">Cancel</button>
-          <button class="task_btn">Got to task</button>
         </div>
     </form>
+    <div class="model" id="model">
+        <p>Task has been created successfully. Do you want to save task?</p>
+        <div class="buttn_container">
+         <button class="cancel_btn" id="canceltask">Cancel</button>
+         <button class="task_btn" id="savetask">Save Task</button>
+        </div>
+    </div>
+    
+    <div class="save_task_model" id="savedTask">
+        <p>Task has been saved successfully...!</p>
+    </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./form.js"></script>
 </body>

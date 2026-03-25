@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "This is my today task app",
   "main": "index.js",
-  "type" :"module",
+  "type": "module",
   "scripts": {
     "start": "node backend/src/index.js",
     "dev": "nodemon backend/src/index.js"
@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/nakayizakevina/Hexify_ToDoList#readme",
   "dependencies": {
+    "axios": "^1.13.6",
+    "cors": "^2.8.6",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "mongoose": "^9.3.1",
