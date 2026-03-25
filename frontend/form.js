@@ -1,30 +1,38 @@
 const title = document.getElementById("title");
 const description = document.getElementById("description");
+const time = document.getElementById("time")
 const create_btn = document.getElementById("createtask_btn");
 
 create_btn.addEventListener("click", async function (e) {
+
   e.preventDefault();
 
   const Title = title.value;
   const Description = description.value;
+  const Time = time.value;
+
+  console.log(Title)
+  console.log(Description)
+  console.log(Time)
 
   if (Title === "") {
     console.log("Title is required");
-  } else if (Description === "") {
+  } 
+  if (Description === "") {
     console.log("Description is required");
   }
 
   try {
-    const response = await fetch("http://localhost:4000/api/v1/task", {
-      method: "post",
-      "Content-Type": "application/json",
+    const response = await axios.post("http://localhost:4000/api/v1/task", {
+     title: Title,
+      description: Description
     });
-    const fetchedData = await response.json();
-    console.log(fetchedData);
+    console.log(response.data);
   } catch (error) {
     console.log("Sorry the data couldn't be fetched");
   }
 
-  Title.value = "";
-  Description.value = "";
+  title.value = "";
+  description.value = "";
+  time.value="";
 });
