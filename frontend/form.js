@@ -38,6 +38,7 @@ if (createTask) {
 
 if (saveTask) {
   saveTask.addEventListener("click", async function (e) {
+    console.log("Have been clicked")
     try {
       const response = await axios.post("http://localhost:4000/api/v1/task", {
         title: Title,
