@@ -44,21 +44,13 @@ if (saveTask) {
         description: Description,
         time: Time,
       });
-
-      cardDetails.push({
-        title: Title,
-        message: Description,
-        time: Time,
-        image: "yourImagePathHere",
-      });
-
-      console.log(response.data);
+      const tasks = response.data.tasks;
 
       successModel.style.display = "block";
 
       setTimeout(
         (window.location.href = "http://127.0.0.1:5500/frontend/tasks.html"),
-        80000,
+        8000,
       );
     } catch (error) {
       console.log("Sorry the data couldn't be saved");
