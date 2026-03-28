@@ -11,6 +11,9 @@ const successModel = document.getElementById("savedTask");
 const saveTask = document.getElementById("viewtask");
 const cancelTask = document.getElementById("canceltask");
 
+const API = "https://todolist-backend-pati.onrender.com/api/v1/task";
+
+
 let Title;
 let Description;
 let Time;
@@ -35,7 +38,7 @@ if (createTask) {
 
     try {
      console.log("sending request")
-      const response = await axios.post("https://todolist-backend-pati.onrender.com/createtask", {
+      const response = await axios.post(`${API}/createtask`, {
         title: Title,
         description: Description,
         time: Time,
@@ -62,7 +65,7 @@ if (createTask) {
 if (saveTask) {
   saveTask.addEventListener("click", function (e) {
     
-    window.location.href = "http://127.0.0.1:5500/frontend/tasks.html"
+    window.location.href = "http://127.0.0.1:5500/task.html"
    
 
     model.style.display = "none";

@@ -1,8 +1,10 @@
 const cardContainer = document.getElementById("cards__container");
 
+const API = "https://todolist-backend-pati.onrender.com/api/v1/task";
+
 async function displayTask() {
   try {
-    const response = await axios.get("http://localhost:4000/api/v1/task");
+    const response = await axios.get(`${API}/getalltasks`);
     const tasks = response.data;
     console.log(tasks);
 
@@ -58,9 +60,14 @@ async function displayTask() {
       });
 
       const deleteButton = deleteBtn.querySelector(".delete__icon");
-      deleteButton.addEventListener("click", function () {
-        console.log("have been deleted");
-        card.remove();
+      deleteButton.addEventListener("click", async function () {
+        try {
+          const response = await axios.delete(`${API}/deletetask/${task._id}`)
+          card.remove();
+          
+        } catch (error) {
+          console.log("can't be deleted");
+        }
       });
 
       cardContent.appendChild(card);
