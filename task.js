@@ -1,4 +1,6 @@
 const cardContainer = document.getElementById("cards__container");
+const searchTitle = document.getElementById("search__title");
+const searchTask = document.getElementById("search__task");
 
 const API = "https://todolist-backend-pati.onrender.com/api/v1/task";
 
@@ -6,11 +8,12 @@ async function displayTask() {
   try {
     const response = await axios.get(`${API}/getalltasks`);
     const tasks = response.data;
-    console.log(tasks);
-
+  
     tasks.forEach((task) => {
       const cardContent = document.createElement("div");
-      cardContent.classList = "card__container";
+      cardContent.classList = "card__container task";
+   
+
       const card = document.createElement("div");
       card.classList = "card__details";
       card.innerHTML = `
@@ -63,6 +66,7 @@ async function displayTask() {
       deleteButton.addEventListener("click", async function () {
         try {
           const response = await axios.delete(`${API}/deletetask/${task._id}`)
+         
           card.remove();
           
         } catch (error) {
@@ -80,6 +84,31 @@ async function displayTask() {
   }
 }
 displayTask();
+
+searchTask.addEventListener("click", async function (e){
+  console.log("have been clicked")
+  const userTitle = searchTitle.value;
+  try {
+   
+      const response = await axios.get(`${API}/getsingletask/${userTitle}`)
+      const foundTask = response.data;
+      console.log(foundTask)
+    const allTasks = document.querySelectorAll(".task");
+    console.log(allTasks)
+
+    allTasks.forEach(task => {
+      if (task.dataset.id === foundTask._id) {
+        task.style.display = "block"; 
+      } else {
+        task.style.display = "none"; 
+      }
+    });
+
+
+  } catch (error) {
+     console.log(error);
+  }
+})
 
 
 
