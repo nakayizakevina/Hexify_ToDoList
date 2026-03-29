@@ -81,6 +81,14 @@ form button {
     background-color: #f44336;   
 }
 
+/* .cancelEdit_btn{
+    display: none;
+}
+
+.updateTask_btn{
+   display: none;
+} */
+
 .task_btn {
     background-color: #2196F3; 
 }

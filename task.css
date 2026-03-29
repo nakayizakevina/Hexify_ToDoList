@@ -137,7 +137,7 @@ input{
     color: gray;
 }
 
-.deleteIcon__container{
+.actions__container{
     padding:10px; 
     width: 100px;
     height: 100%; 
@@ -146,13 +146,22 @@ input{
     top: 0; 
     border-radius: 10px;
     display: flex;
+    flex-direction: column;
+    gap: 4px;
     justify-content: flex-end;
     align-items:center;
     background-color: red;  
 }
 
 .delete__icon{
-    width: 2rem;
-    height:2rem;
+    width: 1.5rem;
+    height:1.5rem;
+    cursor: pointer;
+}
+
+.edit__icon{
+    width: 1.5rem;
+    height:1.5rem;
+    cursor: pointer;
 }
 
